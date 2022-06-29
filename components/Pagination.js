@@ -43,12 +43,10 @@ const Pagination = ({ page, showNext }) => {
   )
 }
 
-        <script>
-          Waline.init({
-            el: '#waline',
-            serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/',
-            pageview: true,
-          });
-        </script>
+init({
+  el: '#waline',
+  serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/'
+})
+
 
 export default Pagination
