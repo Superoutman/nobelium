@@ -37,7 +37,7 @@ const BLOG = {
   },
   comment: {
     // support provider: gitalk, utterances, cusdis
-    provider: 'cusdis', // leave it empty if you don't need any comment plugin
+    provider: 'waline', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
       repo: '', // The repository of store comments
       owner: '',
@@ -48,6 +48,11 @@ const BLOG = {
     },
     utterancesConfig: {
       repo: ''
+    },
+    walineConfig: {      
+    el: '#waline',
+    serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/',
+    pageview: true
     },
     cusdisConfig: {
       appId: '197a3a06-716a-40dc-9c22-466d1beafd5e', // data-app-id
