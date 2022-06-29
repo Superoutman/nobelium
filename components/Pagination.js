@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
-import { init } from '@waline/client'
-import '@waline/client/dist/waline.css'
 
 const Pagination = ({ page, showNext }) => {
   const locale = useLocale()
@@ -42,11 +40,5 @@ const Pagination = ({ page, showNext }) => {
     </div>
   )
 }
-
-init({
-  el: '#waline',
-  serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/'
-})
-
 
 export default Pagination
