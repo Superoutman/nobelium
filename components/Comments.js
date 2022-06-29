@@ -26,7 +26,7 @@ const CusdisComponent = dynamic(
 )
 const WalineComponent = dynamic(
   () => {
-    return import('@waline/client').then(m => m.ReactWaline)
+    return import('@waline/client')
   },
   { ssr: false }
 )
@@ -67,8 +67,7 @@ const Comments = ({ frontMatter }) => {
       )}
       {BLOG.comment && BLOG.comment.provider === 'waline' && (
         <WalineComponent
-        lang={init()}
-          attrs={{
+          init={{
             el: BLOG.comment.walineConfig.el,
             serverURL: BLOG.comment.walineConfig.serverURL
           }}
