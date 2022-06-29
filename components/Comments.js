@@ -24,12 +24,11 @@ const CusdisComponent = dynamic(
   },
   { ssr: false }
 )
-const WalineComponent = dynamic(
-  () => {
-    return import('@waline/client')
-  },
-  { ssr: false }
-)
+init({
+el: '#waline',
+serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/',
+pageview: true
+})
 
 const Comments = ({ frontMatter }) => {
   const router = useRouter()
@@ -62,14 +61,6 @@ const Comments = ({ frontMatter }) => {
             pageTitle: frontMatter.title,
             pageUrl: BLOG.link + router.asPath,
             theme: BLOG.appearance
-          }}
-        />
-      )}
-      {BLOG.comment && BLOG.comment.provider === 'waline' && (
-        <WalineComponent
-          init={{
-            el: BLOG.comment.walineConfig.el,
-            serverURL: BLOG.comment.walineConfig.serverURL
           }}
         />
       )}
