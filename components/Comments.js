@@ -3,6 +3,8 @@ import BLOG from '@/blog.config'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import 'gitalk/dist/gitalk.css'
+import { init } from '@waline/client'
+import '@waline/client/dist/waline.css'
 
 const GitalkComponent = dynamic(
   () => {
@@ -19,6 +21,12 @@ const UtterancesComponent = dynamic(
 const CusdisComponent = dynamic(
   () => {
     return import('react-cusdis').then(m => m.ReactCusdis)
+  },
+  { ssr: false }
+)
+const WalineComponent = dynamic(
+  () => {
+    return import('@waline/client').then(m => m.ReactWaline)
   },
   { ssr: false }
 )
@@ -57,6 +65,16 @@ const Comments = ({ frontMatter }) => {
           }}
         />
       )}
+      {BLOG.comment && BLOG.comment.provider === 'waline' && (
+        <WalineComponent
+        lang={init()}
+          attrs={{
+            el: BLOG.comment.walineConfig.el,
+            serverURL: BLOG.comment.walineConfig.serverURL
+          }}
+        />
+      )}
+
     </div>
   )
 }
