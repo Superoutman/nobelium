@@ -24,11 +24,6 @@ const CusdisComponent = dynamic(
   },
   { ssr: false }
 )
-init({
-el: '#waline',
-serverURL: 'https://waline-awruuwocw-superoutman.vercel.app/',
-pageview: true
-})
 
 const Comments = ({ frontMatter }) => {
   const router = useRouter()
