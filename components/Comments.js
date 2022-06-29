@@ -3,8 +3,6 @@ import BLOG from '@/blog.config'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import 'gitalk/dist/gitalk.css'
-import { init } from '@waline/client'
-import '@waline/client/dist/waline.css'
 
 const GitalkComponent = dynamic(
   () => {
