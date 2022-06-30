@@ -34,9 +34,7 @@ const Comments = ({ frontMatter }) => {
   const router = useRouter()
   return (
     <div>
-      {BLOG.comment && BLOG.comment.provider === 'Waline' && (
-        <{WalineComponent} />
-      )}
+
 
       {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
         <GitalkComponent
