@@ -1,7 +1,5 @@
-import React from 'react'
-import { init } from '@waline/client'
 import BLOG from '@/blog.config'
-import { useRouter } from 'next/router'
+import { init } from '@waline/client'
 
 /**
  * @see https://waline.js.org/guide/get-started.html
