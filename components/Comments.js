@@ -4,6 +4,13 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import 'gitalk/dist/gitalk.css'
 
+const WalineComponent = dynamic(
+  () => {
+    return import('@/components/WalineComponent')
+  },
+  { ssr: false }
+)
+
 const GitalkComponent = dynamic(
   () => {
     return import('gitalk/dist/gitalk-component')
@@ -27,6 +34,7 @@ const Comments = ({ frontMatter }) => {
   const router = useRouter()
   return (
     <div>
+
 
       {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
         <GitalkComponent
