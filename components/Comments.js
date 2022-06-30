@@ -35,7 +35,7 @@ const Comments = ({ frontMatter }) => {
   return (
     <div>
       {BLOG.comment && BLOG.comment.provider === 'Waline' && (
-        <WalineComponent />
+        <{WalineComponent} />
       )}
 
       {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
